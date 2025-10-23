@@ -1,9 +1,9 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { getAll, getById } = require("../controllers/classController");
+const { getAll, getById } = require('../controllers/classController');
 
-router.get("/", getAll);
+router.get('/', getAll);
 
-router.get("/:id", getById);
+router.get('/:id', getById);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const benchmarkService = require("../services/benchmarkService");
+const benchmarkService = require('../services/benchmarkService');
 
 exports.getAll = (req, res) => {
   const benchmarks = benchmarkService.getAll();
