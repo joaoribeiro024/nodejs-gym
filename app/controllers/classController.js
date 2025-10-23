@@ -1,3 +1,5 @@
+const classService = require('../services/classService');
+
 exports.getAll = (req, res) => {
   const classes = classService.getAll();
   res.json(classes);

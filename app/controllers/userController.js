@@ -1,9 +1,13 @@
+const userService = require('../services/userService');
+
 exports.getAll = (req, res) => {
-  const users = userService.getAll();
-  res.json(users);
+  userService.getAll().then(users => {
+    res.json(users);
+  });
 };
 
 exports.getById = (req, res) => {
-  const users = userService.getUserById(req.params.id);
-  res.json(classes);
+  userService.getUserById(req.params.id).then(user => {
+    res.json(user);
+  });
 };
