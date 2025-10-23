@@ -1,11 +1,14 @@
-const { createServer } = require("node:http");
-const hostname = "127.0.0.1";
-const port = 3000;
-const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World");
-});
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+const express = require("express");
+const app = express();
+app.use(express.json());
+
+const classRoutes = require("./app/routes/classRoute");
+const userRoutes = require("./app/routes/userRoute.js");
+const benchmarkRoutes = require("./app/routes/benchmarkRoute");
+
+app.use("/users", userRoutes);
+app.use("/classes", classRoutes);
+app.use("/benchmarks", benchmarkRoutes);
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
