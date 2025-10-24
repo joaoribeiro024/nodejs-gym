@@ -1,9 +1,8 @@
 const userService = require('../services/userService');
 
 exports.getAll = (req, res) => {
-  userService.getAll().then(users => {
-    res.json(users);
-  });
+  const users = userService.getAll();
+  res.json(users);
 };
 
 exports.getById = (req, res) => {
